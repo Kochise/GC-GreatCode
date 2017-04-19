@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- CVS ID : $Id: gc.bkl,v 1.2 2011/09/21 20:59:54 jm-dk Exp $ -->
+
+<!--
+
+This is a bakefile - it can be used to generate makefiles & project files
+
+Full details (and download9 can be found at: www.bakefile.org
+
+From a command prompt, to produce a MS project file for Visual Studio 2008 type:
+
+	bakefile -fmsvs2008prj gc.bkl
+
+To Generate a gnu makefile type
+
+	bakefile -fgnu gc.bkl
+
+Enjoy :-)
+
+-->
+
+<makefile>
+		
+	<include file="presets/simple.bkl"/>
+
+
+		
+	<!-- gc Great Code -->
+	<exe id="gc" template="simple">
+		<app-type>console</app-type>
+
+    <define>_CRT_SECURE_NO_WARNINGS</define>
+		<!-- include files -->
+			<!-- NO EXTRA INCLUDE FILES NEEDED -->
+
+		<!-- Header files -->
+		<headers>
+			sources/config.h
+			sources/debug.h
+			sources/error.h
+			sources/grammar.h
+			sources/in.h
+			sources/indent.h
+			sources/lexi.h
+			sources/os.h
+			sources/out.h
+			sources/tools.h
+		</headers>
+
+		<!-- Source files -->
+		<sources>
+			sources/config.c
+			sources/debug.c
+			sources/error.c
+			sources/grammar.c
+			sources/grammar_decl.c
+			sources/grammar_pp.c
+			sources/in.c
+			sources/indent.c
+			sources/indent_cmt.c
+			sources/indent_eol.c
+			sources/indent_pp.c
+			sources/indent_spaces.c
+			sources/indent_special.c
+			sources/lexi.c
+			sources/main.c
+			sources/out.c
+			sources/tools.c
+			sources/tools_cmt.c
+ 		</sources>
+
+		<!-- 'system' libraries -->
+			<!-- NO EXTRA LIBRARIES NEEDED! -->
+		
+		
+	</exe>
+</makefile>
+	

@@ -1,0 +1,909 @@
+		Version 1.150 (15 November 2011)
+		------------------------------------------------------------------------------------------------------
+
+		Building:
+		Bakefile introduced for building gc - for Windows, Linux
+		Will compile and work on Windows, Linux (& possibly Mas OS)
+		See www.bakefile.org for tool needed to translate the bakefile to project or makefile
+
+		premake4 introduced for building gc - for Windows, Linux
+		Can build visual Studio 2010 project file
+		http://industriousone.com/premake
+
+		
+		Misc:
+		Syntax function now takes line & column number - so easier to locate where GC cannot process a file
+
+		Assorted bugs fixed
+
+		Options:
+		Option -eol_unix- is default off when running on Windows and is default on when running on non WIN32 hosts
+		Option -cmt_dont_modify- is now on by default - New users are often negativly surprised by default comment
+		 behaviour reformating carefully pre-formatted comments
+		option -no-cmt_decl- is now default
+
+		Bugs:
+		-cmt-doxygen- doesn't seem to work as expected. (Hopefully fixed in a future release) 
+
+
+		Version 1.140 (15 December 2004)
+		------------------------------------------------------------------------------------------------------
+
+		Misc:
+		New option -cmt_doxygen- (default TRUE).
+		A lot of stuff to accept files ready for doxygen.
+		Options cmt_java_doc, cmt_fct_java_doc and cmt_split_before_@_in_fct_cmts- are dead.
+		Option -cmt_fct_categ_style- is dead.
+		Options -cmt_fct_categ- and -cmt_fct_categ_in- have now parameters.
+		-cmt_fct_categ- accept \name @name syntaxe instead of name:
+		Some crach corrected.
+		-cmt_sep_force_class-, -cmt_sep_force_struct-, does not add/change the comment if there's another
+		comment after, just before the class/struct declaration.
+		Correction in operator detection of < and >.
+		Correction in operator detection of const char * (for example).
+		Correction in nested templates.
+
+		Version 1.139 (15 December 2004), the first SourceForge one...
+		------------------------------------------------------------------------------------------------------
+
+		Misc:
+		Correction with /*$<num>- comment.
+		Comments with special characters are no more considered as "level" comments.
+		-code_empty_fct_blanks- only if braces are not concat (correct inline in class).
+		New option -stmt_static_init_style-.
+		New option -stmt_static_init_len-.
+		Correction in operator detection.
+		New special comments /*$bt*/ and /*$bf*/.
+		Option -stmt_concat_inline_class- is now FALSE by default.
+		Option -code_decl_add_void- is now FALSE by default.
+		New option -cmt_add_fct_def_class-.
+		New option -cmt_fct_categ_style.
+		New option -in_cfg-. -lst_name-, -cfg_name-, -can_cfg-, -can_lst- killed.
+		Correction with a switch with a unique case witout break (crash).
+		The break character in source comments in now ';'.
+
+		Thanks to Matt Daniel for:
+		Correction of -code_split_decl_style- option.
+
+		Thanks to Ben Papworth for:
+		Corrections of on bug in the the lexi analyser.
+		New keywords "signed" and "const_cast".
+		Correction of -code_decl_access_to_type- with namespace.
+
+		Thanks to Jamie Peabody for:
+		Correction with the throw keyword.
+
+		Thanks to Michael Seibert for:
+		Correction in the help file.
+		Correction in a template detection.
+
+		Thanks to Ricardo Mayerhofer, Todd Witters, Thomas Beckmann, Gary Ash for:
+		Correction of -cmt_dont_modify- and C++ comments.
+
+		Thanks to Ryan Parasram for:
+		Scientific numbers are now recognized even with spaces. Spaces are then removed.
+
+		Thanks to Tom Bulsink for::
+		Correction with the throw keyword in a pure declaration.
+		
+		Version 1.138 (03 January 2003)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		New special comment /*$na*/.
+		New special comments /*$sf*/ and /*$st*/.
+
+		Great thanks to John Nixon for: (SOURCE CODE)
+		All kind of things in source files and help file, new options, bug corrections, and so on... Thanks !
+
+		Thanks to Steve Glennon for:
+		Correction of -pp_align_to_code-
+
+		Thanks to Straw, Scott J for:
+		Correction(s) in the source code.
+
+		Thanks to Ted Bullock for:
+		Correction of "+ ++".
+
+		Thanks to Chris Weed for:
+		Corrections in the help file.
+		New option [-no]-stmt_break_dowhile- (default FALSE).
+		New option [-no]-space_fctcall_inparam- (default TRUE).
+
+		Thanks to Cheung William for:
+		Corrections in split styles.
+
+		Thanks to Leendert Sonneveld for:
+		Correction with enum.
+		New option -stmt_switch_eol-.
+
+		Thanks to Luis Fernando Teixeira for:
+		Correction in -code_align_max_blanks- option.
+
+		Thanks to James A. Parker for:
+		New style for -code_split_decl_style- option.
+
+		Thanks to Ger Kersten for:
+		Correction in if/else statement detection.
+		
+		Version 1.137 (06 April 2002)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of -code_align_max_blanks-. Default value is now 1000 (to ignore).
+		Alignement is now broken by public, private... keywords.
+		Correction with -cmt_dont_modify- and blocks of C++ comments.
+
+		Thanks to Daniel Gehriger for:
+		Help online and tools...
+
+		Thanks to Vitaliy Knyazev for:
+		One crash corrected.
+		New option [-no]-overwrite_read_only- (default FALSE).
+		Correction with blank lines.
+
+		Thanks to Lauritzen Jacob for:
+		Correction to code_decl_access_to_type-.
+
+		Thanks to Marcel Maretic for:
+		Correction to -cmt_dont_modify- and c++ comments.
+
+		Thanks to argomes for:
+		Correction to //$F special comments.
+
+		Thanks to Christian Waldmann for:
+		Correction of "default" in a pragma.
+
+		Thanks Ingo Pakleppa for:
+		#import is now recognized.
+		
+		Version 1.136 (15 December 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Thanks to Vitaliy Knyazev for:
+		Correction of -dir- option.
+		Correction of -code_wizard_indent- option.
+		Correction when both -cmt_dont_modify- and -cmt_keep_cpp- for cpp comments.
+
+		Thanks to Ingo Pakleppa for:
+		Detection of "type AA::AA::operator" syntaxe.
+		One crash corrected.
+		Templates in class declarations.
+		
+		Version 1.135 (09 December 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Thanks to Koster Harald for:
+		Correction of #error directive.
+		One infinite loop corrected.
+
+		Thanks to Vitaliy Knyazev for:
+		No space between . and *, and -> and *.
+
+		Thanks to James A. Parker for:
+		New option [-no]-space_fctcall_lastparam-, [-no]-space_fctdecl_lastparam- and [-no]-space_fctdef_lastparam-. Default FALSE for all.
+		
+		Version 1.134 (26 November 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Force a blank between a return and a cast.
+
+		Thanks to Christophe David for:		
+		Correction to split styles.
+
+		Thanks to Petr Sulla for:
+		Detection of type of aa::type form.
+		Correction of -code_align_max_blanks-.
+
+		Thanks to Jeffrey K Renshaw for:
+		Detection of #line pragmas.
+		
+		Version 1.133 (07 November 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of macros concat.
+		Correction of indentation of constructors.
+
+		Thanks to Dave Harris for:		
+		Correction of -cmt_dont_modify- option.
+
+		Thanks to Ingo Pakleppa for:
+		Correction of conversion of CPP comments to C.
+
+		Thanks to Arnd Brueggerhoff for:
+		Correction when keeping CPP comments.
+
+		Thanks to Jeroen Boonen for:	
+		New option [-no]-pp_align_breakline- (default FALSE).
+		Missing empty lines for macros.
+		
+		Version 1.132 (28 October 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of indentation of end of line C++ comments.
+		Correction when a template is broken.
+
+		Great thanks to Wink Saville for: (SOURCE CODE)
+		New option -cmt_fixme-"string".
+		New option -cmt_trailing_style-"num" (default 0).
+		New option [-no]-cmt_force_fct_def_decl_split- (default FALSE).
+		New option [-no]-cmt_java_doc- (default FALSE).
+		New option [-no]-cmt_fct_java_doc- (default FALSE).
+		New option [-no]-cmt_split_before_@_in_fct_cmts- (default FALSE).
+		Bug corrections.
+
+		Thanks to Robert Andrew Wroe for:
+		Correction in -code_constructor_style- option.
+		Correction for the last EOL of file.
+
+		Thanks to Gerald Dalley Wroe for:
+		 Crash corrected when bad include format.
+
+		Thanks to Ingo Pakleppa for:
+		Correction of -cmt_c2cpp- option.
+		
+		Version 1.131 (06 October 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Better detection of unary operators.
+		-cmt_add_file- option works even if -cmt_add_gc_tag- is set to off.
+		-code_decl_move_top- is now false by default.
+
+		Thanks to Volker Wend for:
+		throw is not considered as a type anymore.
+
+		Thanks to Ingo Pakleppa for:		
+		New option -cmt_add_file_style-"int" (default 0).
+
+		Thanks to Arnd Brueggerhoff for:
+		Correction of split styles.
+		
+		Version 1.130 (18 September 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of static class member initialisation.
+		Correction of -stmt_force_brace- and no indent code.
+		Detection of unary operators for better spaces...
+		Empty line between a #endif and a first line comment.
+		No empty line between a PP #ifdef and a first line comment.
+		New option [-no]-dependencies_dir_rec- (default FALSE).
+
+		Thanks to Hyunil Choi for:
+		One crash corrected.
+
+		Thanks to Ingo Pakleppa for:
+		One bug corrected for templates.
+		One bug detected with the "const" keyword in function declarations.
+
+		Thanks to Tim Brown for:
+		Better detection of the cast operator.
+		New option -code_split_for_style-"num".
+		New option -code_split_if_style-"num".
+
+		Thanks to Albert Kruger for:
+		Correction for declaration of operators.
+
+		Thanks to Arnd Brueggerhoff for:	
+		Bug corrected with do..while without {}.
+		
+		Version 1.129 (01 September 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		New option [-no]-stmt_extern_c_indent-
+
+		Thanks to Jeroen Boonen for:
+		One bug corrected in do...while statement.
+
+		Thanks to Christophe David for:
+		A lot of corrections in document GC.txt.
+
+		Thanks to Keith McCreery for:
+		New option [-no]-stmt_namespace_indent-
+		Correction of -code_def_fct_break_return_type- for class methods definition.
+		
+		Version 1.128 (15 August 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		-stmt_switch_style- has a bad default value in 1.127
+
+		Thanks to Christophe David for:
+		Correction of one bug with cast of function calls.
+		
+		Version 1.127 (15 August 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Detection of the namespace keyword.
+
+		Thanks to Jaben Cargman for:
+		Correction of alignement of destructors in class declaration.
+		New option -code_class_access_eol_before-"int" (default 1).
+		New option -code_constructor_style-"int" (default 0)
+		-stmt_brace_style_fct- option works with constructors.
+
+		Thanks to Jim Wakeen for:
+		Correction of -code_decl_access_to_type- option.
+
+		Thanks to JE for:
+		Correction of -stmt_switch_style- option.
+
+		Thanks to King, David N. for:
+		New style (3) for -code_split_fctcall_style- (also -code_split_fctdef_style- and -code_split_fctdecl_style-, this is the same routine).
+
+		Thanks to Tom Hutto for:
+		Correction of one bug in detection of static init variables.
+
+		Thanks to Keith McCreery for:
+		New option [-no]-space_return- (default FALSE).
+
+		Thanks to Jeroen Boonen for:
+		-file- option knows the *. syntaxe (example -file-*.c)
+
+		Thanks to Pontus Haglund for:
+		New style (3) for -stmt_switch_style-
+
+		Thanks to Mircea Neacsu for:
+		New options [-no]-space_fctdecl- and [-no]-space_fctdef- (default FALSE)
+
+		Thanks to Garno, Steve X for:
+		New option -stmt_concat_else_2_stmt- (default FALSE).
+		New style (4) for -code_split_fctcall_style- (also -code_split_fctdef_style- and -code_split_fctdecl_style-, this is the same routine).
+		
+		Version 1.126 (10 July 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of -code_split_fctdef_style-1.
+		-space_fct_call- renamed to -space_fctcall-.
+		-space_fct_call_firstparam- renamed to -space_fctcall_firstparam-.
+
+		Thanks to Keith McCreery for:
+		-space_paren- works with special function indent style.
+		Detection of the throw syntaxe in function definitions.
+
+		Thanks to Tomas Soucek for:
+		New option [-no]-space_fctdef_firstparam- (default FALSE).
+		New option [-no]-space_fctdecl_firstparam- (default FALSE).
+		
+		Version 1.125 (28 June 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Ondrej Svoboda for:
+		Correction of detection of wide character strings.
+
+		Thanks to Dave Proctor for:
+		New option -code_split_decl_style-"int" (default 0).
+
+		Thanks to Peter Newman for:
+		Alignement problem corrected for -code_split_fctdef_style-2 style.
+
+		Thanks to Tomas Soucek for:
+		New option [-no]-space_fct_call_firstparam- (default FALSE).
+		New option -space_affect_style-"int" (default 0).
+		New option -space_autoaffect_style-"int" (default 0).
+
+		Thanks to Rajesh V. K. for:
+		New option [-no]-cmt_c2cpp- (default FALSE).
+		
+		Version 1.124 (14 June 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		New options -code_split_fctdef_style-"int" (default 0) and -code_split_fctdecl_style-"int" (default 0).
+
+		Thanks to jiangke for:
+		Correction of detection of hexadecimal numbers.
+
+		Thanks to Jim Wakeen for:
+		GC can process .cs files.
+
+		Thanks to Peter Newman for:
+		One bug corrected.
+
+		Thanks to Christophe David for:
+		New style for -stmt_switch_style- option.
+		
+		Version 1.123 (11 June 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Christophe David for:
+		Correction of -stmt_break_alone- option and do/while statement.
+		
+		Version 1.122 (08 June 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Frank Riley for:
+		Correction of -replace- option to replace only full words.
+
+		Thanks to John Eichenberger and Heck Mathias for:
+		Correction with comments and EOL.
+
+		Thanks to John Eichenberger and Christophe David for:
+		GC has problems finding the .cfg and the .lst in its own directory.
+		
+		Version 1.121 (01 June 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Jas Dhaliwal for:
+		One crash corrected.
+		Correction when GC split last line comments.
+
+		Thanks to Peter Newman for:
+		A bad bug corrected.
+		
+		Version 1.120 (25 May 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Peter Newman for:
+		A lot of changes (code) to be ANSI compatible.
+		GC! has loose its ! -:)
+		-? option change to -help.
+
+		Thanks to John Murray for:
+		One bug corrected in GC!.txt (that is now GC.txt) about gc!.lst (gc.lst) file format.
+		
+		Version 1.119 (24 May 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Peter Newman for:
+		A potential bug corrected.
+
+		Thanks to Michel Valentin for:
+		# comments are now possible in .cfg and .lst files.
+		New style for -code_split_fctcall_style- (2).
+		
+		Version 1.118 (21 May 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Zdenek Hladik for:
+		New option [-no]-eol_unix- (default FALSE).
+
+		Thanks to Pablo Jaquenod for:
+		One crash corrected.
+
+		Thanks to Christophe David for:
+		New option -code_split_fctcall_style-"int" (default 0).
+		
+		Version 1.117 (13 May 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		New option -code_labels_eol_after- (default 1).
+		Correction in detection of a cast syntax and sizeof operator.
+		Correction in -stmt_concat_if- option.
+
+		Thanks to Jaben Cargman for:
+		New option -code_empty_fct_blanks- (default 0).
+		New option -code_class_access_eol_after- (default 1).
+		New option -stmt_brace_style_class- (default 0).
+		New option -stmt_class_indent- (default 0).
+
+		Thanks to Martin Hart for:
+		New option -cmt_sep_eol_before_fct_def- (default 1).
+		
+		Version 1.116 (01 May 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		New option [-no]-pp_include_unix- (default TRUE).
+
+		Thanks to Ian for:
+		Correction with #include and the '\' access character.
+
+		Thanks to Christophe David for:
+		New option [-no]-code_concat_strings- (default FALSE).
+
+		Thanks to Huib Steen for:
+		Correction of -pp_align_to_code- option.
+		
+		Version 1.115 (25 April 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Shmuel Zeigerman for:
+		One crash corrected when a #define is the first token of a file.
+
+		Thanks to Huib Steen for :
+		Conversion of GC!.txt to the microsoft word format.
+		
+		Version 1.114 (20 April 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Tyge Lovset for:
+		New option [-no]-code_def_fct_break_return_type- (default FALSE).
+		
+		Version 1.113 (13 April 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Steven Garno for:
+		Can now specify a path for .cfg and .lst files.
+		Fixed problem with separator chars not being recognized in a $ macro.
+		
+		Version 1.112 (05 April 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Inline functions are not aligned if not concat.
+
+		Thanks to Anne Katrin Schroeder Lanz for:
+		Detection of the java special keyword "throws".
+		A bug corrected in GC!.txt
+		New option [-no]-code_decl_add_void (default TRUE).
+		
+		Version 1.111 (10 March 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Martin Levy for:
+		One crash corrected.
+
+		Thanks to Ron Stephens for:
+		Correction in console help comments.
+
+		Thanks to William Johnsen for:
+		New option [-no]-space_scope_decl- (default FALSE).
+		New option [-no]-space_scope_access- (default FALSE).
+		New option [-no]-cmt_first_space_cpp- (default TRUE).
+
+		Thanks to Steve Garno for:
+		New special comments $C, $A, $a, $R...
+		
+
+		Version 1.110 (02 March 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of detection of destructors.
+
+		Thanks to Ron Stephens for:
+		Correction in indentation of static init of structs (with comments).
+		GC!.cfg and GC!.lst files can be found by a normal windows access.
+
+		Thanks to Joachim Manke for:
+		An error corrected for the number format "0x????L".
+		".inc" files are now recognized.
+		Correction with gc!.lst file, and the '\r' character.
+		
+
+		Version 1.109 (25 february 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of -stmt_concat_macros- option.
+		Force a space between ] and a word.
+		Correction of the cast detection with the for keyword.
+		
+
+		Version 1.108 (04 february 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Ron Stephens for:
+		Special style (1) for -pp_style-.
+
+		Thanks to Adrian Boangiu for:
+		New option -pp_style-"num" (default 0).
+		Special style (2) for -pp_style-.
+		Detection of static_cast and dynamic_cast.
+		Maximum number of parameters has been increased (1000).
+		
+
+		Version 1.107 (26 january 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction of -token_ext- option.
+		Special keywords for -token_ext- option : single_word and single_word_0.
+		No space before a cast (, and after an open [.
+
+		Thanks to Adrian Boangiu for:
+		New option [-no]-space_cast_after- (default TRUE).
+		New option -stmt_switch_style-"num".
+		New option -code_remove_empty_lines-"num".
+		Cast are concerned by -code_decl_access_to_type- option.
+		Correction in detection of the cast operator.
+		Correction of -code_decl_access_to_type- for class declaration.
+		Correction when -stmt_force_brace-, -stmt_brace_style-2 and comments.
+		Force an empty line before a declaration block (if not comment or { before).
+		
+
+		Version 1.106 (20 january 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		Correction when an enum is concat.
+
+		Thanks to Adrian Boangiu for:
+		-output_test- generate a file even if source file is readonly.
+		New option [-no]-code_remove_return_paren- (default FALSE).
+		New option -stmt_brace_style_fct- (default 0).
+		New option -stmt_brace_style_decl- (default 0).
+		New option [-no]-cmt_sep_break- (default TRUE).
+		Add a new style for braces (4).
+		Correction in -stmt_force_brace- to take care of comments.
+		Correction in -stmt_force_brace- (bad indentation the first time GC! is run).
+		Correction of -cmt_sep_force_fct_proto-. Does not concern prototypes inside a function body.
+		Some end line spaces does not exist anymore.
+		
+
+		Version 1.105 (17 january 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc:
+		-dependencies_all- compute dependencies even if -dependencies- is set to FALSE.
+		Fatal error when -bak- and -output_test- are both TRUE.
+		Better detection of cast operators.
+		New option [-no]-space_cast- (default FALSE).
+
+		Thanks to Adrian Boangiu for:
+		Correction for options with a space in parameters ("option param" failed in configuration file).
+		New option -space_paren-"int" (default 0).
+		New option [-no]-stmt_break_alone- (default FALSE).
+		New option -file_end_eol-"int" (default 1).
+		[-no]-code_decl_access_to_type- does not only treat function parameters, but all declarations.
+		
+
+		Version 1.104 (16 january 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Jeff Painter for:
+		Detection of the "throw" keyword.
+		-cmt_first_line_concat- affect also conversion of C++ to C comments.
+		
+		Version 1.103 (10 january 2001)
+		------------------------------------------------------------------------------------------------------
+
+		
+		A new parameter (3) for option -stmt_brace_style-. That is a new format for statements...
+		Correction to also treat empty statements.
+		New option [-no]-pp_align_to_code- to align PP directives as code.
+		
+
+		Version 1.102 (09 january 2001)
+		------------------------------------------------------------------------------------------------------
+		
+		GC! is now shareware...
+		GC!.txt contains the description of all GC! options and special comments.
+		-code_decl_access_to_type- option is now boolean.
+		-code_decl_break_template- option is now boolean.
+		Correction of -stmt_concat_enum- option.
+		Correction of -code_force_return_paren- option.
+		Few corrections in command line help.
+		
+
+		Version 1.101 (03 january 2001)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Don Dwoske for:
+		GC! knows .java files.
+		
+
+		Version 1.100 (29 november 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc
+		Correction in alignement of switch when concat is on.
+
+		Thanks to Steve Gardell for:
+		New option -stmt_brace_style-"int" (default 0). 0, 1 or 2 to change the indentation style of { }.
+		
+
+		Version 1.099 (26 october 2000)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Tao Chen for:
+		Correction of a crash.
+		
+
+		Version 1.098 (08 october 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc
+		Several changes in alignement of end of line comments.
+		One bug corrected with -cmt_keep_cpp- option.
+		Correction in detection of operator keyword.
+		Little correction of -code_decl_move_top- option.
+		Better splitting of too long expressions.
+		Special processing (and special comment form ///) for c++ last line comments that need to be splitted. Avoid the second pass to fail on the file.
+		Speed optimisations (more than 80% on some long files).
+		New option [-no]-stmt_decl_remove_empty- (default true) to remove empty lines in declarations statements.
+		New option [-no]-stmt_concat_if_remove_empty- (default true) to remove empty lines between concat if/while/for.
+		New option -cmt_align_max_blanks- (default 20) to specify the max number of spaces for last line comments alignement.
+		Dangerous option -code_decl_move_affect- has been set to false by default.
+		And misc stuff...
+
+		Thanks to Wayne Jagger for:
+		Correction of a crash cause of a given configuration of enum.
+
+		Thanks to Christer Hedberg for:
+		One infinite loop corrected.
+		
+
+		Version 1.097 (29 september 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc
+		Correction of a crash with enum and -code_decl_move_affect- option.
+
+		Thanks to Li Kang for:
+		Correction of a bug with -space_if- option.
+		
+
+		Version 1.096 (16 september 2000)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Koray Can for:
+		Correction of a bug with -cmt_keep_cpp- option and function decl/def.
+		Option -bak_take- is obsolete, and has been killed...
+		New option [-no]-output_test- (default false) to output file to file_test.???. Original is not replaced. Can't be use with -bak- option.
+		Correction of a bug with -cmt_keep_cpp- and -cmt_cpp2c_keep_eol- option.
+		
+
+		Version 1.095 (01 september 2000)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to JoonBum Kim for:
+		Correction for operator "/".
+
+		Thanks to Ilionskiy Felix for :
+		One crash corrected...
+		
+
+		Version 1.094 (29 august 2000)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to Ilionskiy Felix for :
+		Correction for templates that were not always well detected.
+
+		Thanks to Serge Defever for :
+		New option [-no]-cmt_first_line_blank- (default true) to add an empty line between adjacent first line comments.
+		
+
+		Version 1.093 (24 august 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc
+		Fix an alignement problem of last line comments.
+
+		Thanks to Ilionskiy Felix for :
+		Some options have now a minimal value to avoid critical situations.
+		Correction of a bug due to -no-cmt_add_gc_tag- option.
+		New option -code_align_max_blanks-"num" (default 30) : No more than "num" blanks in alignement of declarations.
+
+		Thanks to Serge Defever for :
+		New option [-no]-cmt_first_line_concat- (default true) to concat adjacent first lines comments.
+		
+
+		Version 1.092 (16 august 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc
+		Long lines can be splitted at | operator.
+
+		Thanks to Ilionskiy Felix for :
+		GC! doesn't find GC!.lst and GC!.cfg files when running from dos prompt. Corrected.
+		Small addition in command line help about GC!.lst format.
+		
+
+		Version 1.091 (12 august 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc
+		Correction in alignement of last line comments.
+		Alignement in enum now only affect "=" operator.
+		Small correction in "default: break;" case.
+
+		Thanks to Tom Slemko for :
+		New option [-no]-code_force_return_paren- (default false) to force () after a return keyword.
+		Long statements without parenthesis can now be broken at boolean operators (&& ||).
+		-code_decl_move_affect- option does not move initialisation of references.
+		Correction with -code_decl_move_top- function.
+		New option [-no]-cmt_cpp2c_keep_eol- (default true) to keep trace of EOL in C++ comments.
+		New option [-no]-stmt_concat_enum (default true) to concat enum if possible.
+		
+
+		Version 1.090 (08 august 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc :
+
+		New option [-no]-stmt_concat_macros- (default true) to concat a macro statement if possible.
+		-stmt_concat_switch- does not concat a switch if more than one case on the same line.
+
+
+		Thanks to JoonBum Kim for :
+
+		Correction of a bug with cmt_keep_cpp and cmt_dont_modify option.
+		
+
+		Version 1.089 (04 august 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Misc :
+
+		Correction of extern "C".
+		Correction of switch concat.
+		Correction of a nasty thing due to an open '<' in a macro.
+
+		Thanks to David A. Rogers for :
+		No more breakline after ~ in a ~word(??) expression.
+		GC! now process templates.
+		New option [-no]-code_decl_break_template- (default true) to force a break line after a template declaration.
+
+		Thanks to Tom Slemko for :
+		Detection of visual studio appwizard special comments.
+		New option [-no]-code_wizard_indent- (default true) to enable GC! to indent code/cmt between appwizard marks.
+		
+
+		Version 1.088 (29 june 2000)
+		------------------------------------------------------------------------------------------------------
+		
+
+		Thanks to David A. Rogers for :
+		New options -cfg_name-<file> and -lst_name-<file> to specify name of .cfg and .lst file instead of default GC!.cfg and GC!.lst.
+		New option [-no]-code_decl_access_to_type- to move * and & just after the type in function params.
+		Correction of few bugs with -cmt_keep_cpp- option.
+		Take care of a C++ function return type with :: access operator...
+		
+
+		Version 1.087 (29 june 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Correction of an alignement problem for comments when the corresponding code has been concat.
+		Correction when #include <...> with / or \ inside.
+		New option [-no]-stmt_concat_switch- to concat all case of a switch if possible.
+		
+
+		Version 1.086 (29 june 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Alignement of names for multi ineritance.
+		Correction of an alignement problem due to multiple local declarations on the same line.
+		Correction of alignement when a constructor calls another constructor with parameters.
+		New option -cmt_decl_max_level-(int) to control -cmt_decl- option.
+		New option [-no]-cmt_dont_modify- to enable/disable comment processing. Default is false.
+		New option [-no]-stmt_concat_inline_class to enable/disable inline functions in class to be split. Default is true.
+		
+
+		Version 1.085 (22 june 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Few modifications in command line help.
+		Alignement of comments after #include directives.
+		Special process when detect several end of line comments (alignement is now correct).
+		Avoid to have { just after the close ) in a inline function with body unsplitted.
+		Check for additionnal ; after } on an inline function.
+		else if(?) ... never concat.
+		
+
+		Version 1.084 (17 june 2000)
+		------------------------------------------------------------------------------------------------------
+		
+		Better alignement for pure virtual functions.
+		"const" pure virtual functions detected.
+		Bug corrected when auto comments are added before a function definition in a macro body.
+		An align problem due to an enum has been corrected.
+		Alignement of enum is now supported.
+		
