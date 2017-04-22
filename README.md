@@ -10,7 +10,7 @@ You need the following to get this program working :
 
 * List of programs
 
-\- \\Output\\ExeDlls\\Release\\\GC.exe : launch with the rigth parameters<br>
+\- \\Output\\ExeDlls\\Release\\GC.exe : launch with the rigth parameters<br>
 
 * Original author
 
@@ -20,7 +20,7 @@ https://sourceforge.net/projects/gcgreatcode/<br>
 
 * How to use it
 
-To get the program working, you need to set several parameters.
+To get the program working, you need to set several parameters, see 'GC.txt'.
 
 * Some infos
 
